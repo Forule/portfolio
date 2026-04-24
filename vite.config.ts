@@ -9,7 +9,6 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        // Hier definierst du alle HTML-Seiten deines Projekts
         main: resolve(__dirname, 'index.html'),
         legal: resolve(__dirname, 'legal.html'),
       },
