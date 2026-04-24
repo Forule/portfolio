@@ -16,7 +16,7 @@ Die Webpräsenz ist als performante Single-Page-Application (SPA) konzipiert. Si
 
 ### Frontend
 - **Framework:** Vite mit TypeScript
-- **Styling:** Tailwind CSS (Utility-First-Ansatz)
+- **Styling:** Tailwind CSS
 - **Typografie:** Fokus auf hoher Lesbarkeit und systemnahem Design
 
 ### Infrastruktur und Deployment
