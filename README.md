@@ -1,35 +1,57 @@
-# Portfolio Jan Muljowin
+# 🌐 Personal Portfolio — janmuljowin.de
 
 [![Live Site](https://img.shields.io/badge/status-online-green.svg?style=for-the-badge)](https://janmuljowin.de)
 [![Build and Publish](https://github.com/forule/portfolio/actions/workflows/build-and-publish.yml/badge.svg)](https://github.com/forule/portfolio/actions/workflows/build-and-publish.yml)
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-Dieses Repository enthält den Quellcode und die Infrastruktur-Konfiguration meiner persönlichen Portfolio-Website. Das Projekt dient der Demonstration technischer Kompetenzen in der Web-Entwicklung sowie im Bereich CI/CD und Containerisierung.
+Source code and infrastructure configuration for my personal portfolio website. The project demonstrates practical skills in frontend development, containerization, and automated CI/CD pipelines.
 
-## 1. Übersicht
+> 🔗 **Live:** [janmuljowin.de](https://janmuljowin.de)
 
-Die Webpräsenz ist als performante Single-Page-Application (SPA) konzipiert. Sie präsentiert ausgewählte Projekte aus den Bereichen Software Engineering, User Experience Research und technisches Design.
+---
 
-- **URL:** [janmuljowin.de](https://janmuljowin.de)
-- **Status:** Produktion / Aktiv
+## Table of Contents
 
-## 2. Technischer Stack
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Deployment Pipeline](#deployment-pipeline)
+- [License](#license)
 
-### Frontend
-- **Framework:** Vite mit TypeScript
-- **Styling:** Tailwind CSS
-- **Typografie:** Fokus auf hoher Lesbarkeit und systemnahem Design
+---
 
-### Infrastruktur und Deployment
-- **Containerisierung:** Docker (Multi-stage Builds zur Minimierung der Image-Größe)
-- **Webserver:** Nginx (Alpine-basiert, optimiert für statische Assets)
-- **Orchestrierung:** Coolify (Self-hosted auf Hetzner Cloud VPS)
-- **CI/CD:** GitHub Actions für Build-Automatisierung und GHCR (GitHub Container Registry)
+## Overview
 
-## 3. Architektur und Deployment-Prozess
+A performant Single-Page Application (SPA) showcasing selected projects across Software Engineering, VR/XR Research, and UI/UX Design. Built with a focus on fast load times, clean typography, and a smooth user experience.
 
-Das Deployment folgt einem automatisierten Workflow, um Konsistenz zwischen Entwicklung und Produktion zu gewährleisten:
+---
 
-1. **Build-Phase:** Bei Veröffentlichung eines Git-Tags (Schema `v*`) initiiert GitHub Actions einen Build-Lauf.
-2. **Containerisierung:** Das Projekt wird in einer Node.js-Umgebung gebaut.
-3. **Registry:** Das fertige Docker-Image wird in die GitHub Container Registry (GHCR) hochgeladen.
-4. **Automatisches Update:** Die Coolify-Instanz auf dem Server erkennt das neue Image in der Registry und führt einen unterbrechungsfreien Neustart des Containers durch (Pull-Prinzip).
+## Tech Stack
+
+**Frontend**
+- **Vite** + **TypeScript** — fast build tooling with full type safety
+- **Tailwind CSS** — utility-first styling for a responsive, maintainable UI
+
+**Infrastructure**
+- **Docker** — multi-stage builds to minimize image size; Nginx (Alpine) for serving static assets
+- **Coolify** — self-hosted on a Hetzner Cloud VPS for full infrastructure control
+- **GitHub Actions** — automated build and publish pipeline
+- **GHCR** — Docker images stored and versioned in GitHub Container Registry
+
+---
+
+## Deployment Pipeline
+
+Every release follows an automated workflow ensuring consistency between development and production:
+
+1. A Git tag matching `v*` triggers the GitHub Actions build pipeline
+2. The project is built in a Node.js environment and packaged as a Docker image
+3. The image is pushed to GHCR
+4. The Coolify instance on the Hetzner VPS detects the new image and performs a zero-downtime container restart (pull-based)
+
+---
+
+## License
+
+Copyright (c) 2026 Jan Muljowin — MIT License.
